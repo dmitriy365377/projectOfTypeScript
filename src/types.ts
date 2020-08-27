@@ -23,7 +23,22 @@ let array2: Array<string> = ['x','y']; // 2 способ использован�
 let tuple: [string, number] = ['str', 1]
 
 
+// object
+
+let obj: object | null
+
+obj = {
+    n: 1
+};
+
+console.log(obj);
 
 
+let someString: any = 'Some string';
 
+someString.length
 
+let l: number = (<string>someString).length;
+console.log(l)
+
+// type assertions

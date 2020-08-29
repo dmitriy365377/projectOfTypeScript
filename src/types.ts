@@ -42,3 +42,5 @@ let l: number = (<string>someString).length;
 console.log(l)
 
 // type assertions
+
+// npx create-react-app my-app --template typescript

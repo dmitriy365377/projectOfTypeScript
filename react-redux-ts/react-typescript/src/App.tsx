@@ -1,30 +1,14 @@
-import React from 'react';
-import { PostForm } from './components/PostForm';
-import { Posts } from './components/Posts';
-import { FetchPosts } from './components/FetchedPosts';
+//Core
+import React, { FC } from 'react';
+import { Provider } from 'react-redux';
 
+// Other
+import {store} from './init/store';
 
-
-const App: React.FC = () => {
-    return (
-        <div className="container pt-3">
-            <div className="row">
-                <div className="col">
-                    <PostForm />
-                </div>
-            </div>
-            <div className="row">
-                <div className="col">
-                    <h2>Синхронные посты</h2>
-                    <Posts posts={[1,2,3]} />
-                </div>
-                <div className="col">
-                    <h2>Асинхронные посты</h2>
-                    <FetchPosts posts={[]}/>
-                </div>
-            </div>
-        </div>
-    )
-}
+const App: FC = () => (
+    <Provider store={store}>
+        
+    </Provider>
+)
 
 export default App;

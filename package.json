@@ -11,5 +11,8 @@
   "devDependencies": {
     "nodemon": "^2.0.4",
     "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "redux-saga": "^1.1.3"
   }
 }

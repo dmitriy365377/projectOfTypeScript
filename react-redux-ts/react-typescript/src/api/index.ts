@@ -1,21 +1,20 @@
-import { root } from './config';
-import { Starships } from './../bus/starships/types';
+import { Starships } from '../bus/starships/types';
 
-export type FetchDataType<T> = () => Promise<T>
+export type FetchDataType<T> = () => Promise<T>;
 
 type APIFetchDataType = {
-    starships: {
-        fetch: FetchDataType<Starships>
-    }
-}
+  starships: {
+    fetch: FetchDataType<Starships>;
+  };
+};
 
 export const api: APIFetchDataType = {
-    starships: {
-        fetch: (): Promise<Starships> => fetch(
-            `${root}/starships`, {
-            method: 'GET'
-        })
-            .then((response) => response.json())
-            .then(({ results }) => ({ results }))
-    }
-}
+  starships: {
+    fetch: (): Promise<Starships> => fetch(`https://swapi.co/api/starships`, {
+        method: 'GET',
+        mode: "no-cors"
+    })
+      .then((response) => response.json())
+      .then(({ results }) => ({ results })),
+  },
+};

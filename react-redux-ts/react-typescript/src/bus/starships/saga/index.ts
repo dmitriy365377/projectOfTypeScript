@@ -3,7 +3,7 @@ import { takeEvery, all, call } from 'redux-saga/effects';
 
 import { STARSHIPS_FETCH_ASYNC } from '../types';
 
-import { fetchStarships } from '../workers';
+import { fetchStarships } from './workers';
 
 function* watchFetchStarships(): SagaIterator {
     yield takeEvery(STARSHIPS_FETCH_ASYNC, fetchStarships)

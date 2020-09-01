@@ -1,10 +1,9 @@
-//Core
+import {all} from 'redux-saga/effects';
+import { SagaIterator } from '@redux-saga/core';
 
-// import {all} from 'redux-saga/effects';
+//Wathers
+import { watchStarships } from '../bus/starships/saga'
 
-// //Wathers
-// import { watchStarShips } from 
-
-// export function* rootSaga(): Generator {
-//     yield all([watchStarShips()])
-// }
+export function* rootSaga(): Generator {
+    yield all([watchStarships()])
+}

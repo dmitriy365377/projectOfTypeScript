@@ -6,8 +6,7 @@ import {
     STARSHIPS_SET_FETCHING_ERROR,
     STARSHIPS_START_FETCHING,
     STARSHIPS_STOP_FETCHING,
-    STARSHIPS_FILL_FETCHING,
-    StarshipActionTypes
+    StarshipsActionTypes
 } from './types';
 
 
@@ -25,7 +24,7 @@ const initialState: StarhipsState = {
     error: false
 }
 
-export const starshipsReducer = (state = initialState, action: StarshipActionTypes): StarhipsState => {
+export const starshipsReducer = (state = initialState, action: StarshipsActionTypes): StarhipsState => {
     switch (action.type) {
         case STARSHIPS_START_FETCHING:
             return {
@@ -52,13 +51,8 @@ export const starshipsReducer = (state = initialState, action: StarshipActionTyp
                 },
                 error: false
             }
-        case STARSHIPS_FILL_FETCHING:
-            return state
         case STARSHIPS_FETCH_ASYNC:
             return state;
-        default:
-            const x: never = action;
-            
     }
     return state
 }

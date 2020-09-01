@@ -53,6 +53,7 @@ export const starshipsReducer = (state = initialState, action: StarshipsActionTy
             }
         case STARSHIPS_FETCH_ASYNC:
             return state;
+        default:
+            return state
     }
-    return state
 }

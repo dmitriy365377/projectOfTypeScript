@@ -19,6 +19,7 @@ export const Starships: FC = () => {
             {errorMessageJSX}
             {loaderJSX}
             {listJSX}
+            {console.log('data',data)}
         </>
     )
 }

@@ -24,6 +24,7 @@ export function* makeRequestWithSpinner<T>(options: OptionsType<T>): SagaIterato
     yield put(startFetching());
 
     const result = yield call(fetcher, fetcherParam);
+    console.log('result', result)
     yield put(fill(result));
   } catch (error) {
     yield put(setErrorAction(error.message));

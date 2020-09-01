@@ -10,11 +10,13 @@ type APIFetchDataType = {
 
 export const api: APIFetchDataType = {
   starships: {
-    fetch: (): Promise<Starships> => fetch(`https://swapi.co/api/starships`, {
+    fetch: (): Promise<Starships> => fetch(`https://swapi.dev/api/starships/`, {
         method: 'GET',
-        mode: "no-cors"
     })
       .then((response) => response.json())
-      .then(({ results }) => ({ results })),
+      .then(({ results }) => (
+          console.log({ results }),
+        { results }
+      )),
   },
 };
